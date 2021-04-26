@@ -17,7 +17,6 @@
             var timer = 0;
             var targetimage;
             hit = false;
-            console.log(hit);
             var score = 0;
 
             function preload(){
@@ -61,6 +60,7 @@
                     score += 1;
                     document.getElementById('points').innerHTML = score;
                 }
+                console.log(hit);
             }
             // function targets(){
             //     this.x = random(50,w-50);
