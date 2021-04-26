@@ -11,38 +11,23 @@
             //variable to store crosshair
             var crosshair;
             //variable to store targets
-            var targets;
+            var target;
             var timer = 0;
 
             function preload(){
 
             }
-
-            function setup(){
-                createCanvas(w,h);
-                //load the crosshair image
-                crosshair = loadImage("blackcrosshair.png");
-                targets = new targets();
-            }
-
-            function draw(){
-                clear();
-                //crosshair size & move with cursor
-                image(crosshair,mouseX,mouseY,80,80);
-                //make cursor appear on center of the crosshair
-                imageMode(CENTER);
-                targets.show();
-                targets.update();
-            }
-            function targets(){
-                this.x = random(50,w-50);
-                this.y = random(50,h-50);
+            class targets{
+                constructor(){
+                    this.x = random(50,w-50);
+                    this.y = random(50,h-50);
+                }
                 //build function called SHOW to define characteristics
-                this.show = function(){
+                show(){
                     targets = loadImage("targets.png");
                     image(targets,this.x,this.y,50,50);
                 }
-                this.update = function(){
+                update(){
                     //if the milliseconds is greater than or equal to 1000 + current timer value
                     if(millis() >= 5000 + timer){
                         this.x = random(50,w-50);
@@ -52,6 +37,40 @@
                     }
                 }
             }
+            function setup(){
+                createCanvas(w,h);
+                //load the crosshair image
+                crosshair = loadImage("blackcrosshair.png");
+                target = new targets();
+            }
+
+            function draw(){
+                clear();
+                //crosshair size & move with cursor
+                image(crosshair,mouseX,mouseY,80,80);
+                //make cursor appear on center of the crosshair
+                imageMode(CENTER);
+                target.show();
+                target.update();
+            }
+            // function targets(){
+            //     this.x = random(50,w-50);
+            //     this.y = random(50,h-50);
+            //     //build function called SHOW to define characteristics
+            //     this.show = function(){
+            //         targets = loadImage("targets.png");
+            //         image(targets,this.x,this.y,50,50);
+            //     }
+            //     this.update = function(){
+            //         //if the milliseconds is greater than or equal to 1000 + current timer value
+            //         if(millis() >= 5000 + timer){
+            //             this.x = random(50,w-50);
+            //             this.y = random(50,h-50);
+            //             //reset timer
+            //             timer = millis();
+            //         }
+            //     }
+            // }
         </script>
     </body>
 </html>
