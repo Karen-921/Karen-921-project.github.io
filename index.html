@@ -62,11 +62,10 @@
                 }
                 console.log(hit);
                 if(millis() >= 10000){
-                    //window.alert("Game Over" + "  Score= " + score);
                     millis = 0;
                     timer = 0;
+                    window.alert("Game Over" + "  Score= " + score);
                     score = 0;
-                    window.alert(timer);
                 }
             }
             // function targets(){
