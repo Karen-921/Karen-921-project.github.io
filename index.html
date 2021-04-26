@@ -61,6 +61,10 @@
                     document.getElementById('points').innerHTML = score;
                 }
                 console.log(hit);
+                if(millis()>= 10000){
+                    window.alert("Game Over" + "Score=" + score);
+                    score = 0;
+                }
             }
             // function targets(){
             //     this.x = random(50,w-50);
