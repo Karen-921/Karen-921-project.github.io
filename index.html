@@ -31,15 +31,15 @@
                 image(crosshair,mouseX,mouseY,80,80);
                 //make cursor appear on center of the crosshair
                 imageMode(CENTER);
-                //targets.show();
-                //targets.update();
+                targets.show();
+                targets.update();
             }
             function targets(){
                 this.x = random(50,w-50);
                 this.y = random(50,h-50);
                 //build function called SHOW to define characteristics
                 this.show = function(){
-                    targets = loadImage();
+                    targets = loadImage("targets.png");
                     image(targets,this.x,this.y,50,50);
                 }
                 this.update = function(){
