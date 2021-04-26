@@ -14,7 +14,7 @@
             var target;
             var timer = 0;
             var targetimage;
-            
+
             function preload(){
                 targetimage = loadImage("targets.png");
             }
@@ -46,12 +46,11 @@
 
             function draw(){
                 clear();
-                //crosshair size & move with cursor
+                target.show();
+                target.update();
                 image(crosshair,mouseX,mouseY,80,80);
                 //make cursor appear on center of the crosshair
                 imageMode(CENTER);
-                target.show();
-                target.update();
             }
             // function targets(){
             //     this.x = random(50,w-50);
