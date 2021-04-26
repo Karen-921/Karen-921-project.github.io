@@ -56,7 +56,7 @@
                 image(crosshair,mouseX,mouseY,65,65);
                 //make cursor appear on center of the crosshair
                 imageMode(CENTER);
-                hit = collidePointCircle(mouseX,mouseY,targets.x,targets.y,25);
+                hit = collidePointCircle(mouseX,mouseY,target.x,target.y,25);
                 if(hit == true){
                     score += 1;
                     document.getElementById('points').innerHTML = score;
