@@ -13,9 +13,10 @@
             //variable to store targets
             var target;
             var timer = 0;
-
+            var targetimage;
+            
             function preload(){
-
+                targetimage = loadImage("targets.png");
             }
             class targets{
                 constructor(){
@@ -24,8 +25,7 @@
                 }
                 //build function called SHOW to define characteristics
                 show(){
-                    targets = loadImage("targets.png");
-                    image(targets,this.x,this.y,50,50);
+                    image(targetimage,this.x,this.y,50,50);
                 }
                 update(){
                     //if the milliseconds is greater than or equal to 1000 + current timer value
