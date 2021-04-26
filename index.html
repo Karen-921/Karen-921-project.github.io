@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+        <script defer src="https://unpkg.com/p5.collide2d"></script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
+    </head>
+    <body>
+        <script>
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            //variable to store crosshair
+            var crosshair;
+            //variable to store targets
+            var targets;
+            var timer = 0;
+
+            function preload(){
+
+            }
+
+            function setup(){
+                createCanvas(w,h);
+                //load the crosshair image
+                crosshair = loadImage("blackcrosshair.png");
+                targets = new targets();
+            }
+
+            function draw(){
+                clear();
+                //crosshair size & move with cursor
+                image(crosshair,mouseX,mouseY,80,80);
+                //make cursor appear on center of the crosshair
+                imageMode(CENTER);
+                targets.show();
+                targets.update();
+            }
+            function targets(){
+                this.x = random(50,w-50);
+                this.y = random(50,h-50);
+                //build function called SHOW to define characteristics
+                this.show = function(){
+                    targets = loadImage();
+                    image(targets,this.x,this.y,50,50);
+                }
+                this.update = function(){
+                    //if the milliseconds is greater than or equal to 1000 + current timer value
+                    if(millis() >= 5000 + timer){
+                        this.x = random(50,w-50);
+                        this.y = random(50,h-50);
+                        //reset timer
+                        timer = millis();
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
