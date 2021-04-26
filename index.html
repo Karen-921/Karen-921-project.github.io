@@ -26,7 +26,7 @@
                 }
                 //build function called SHOW to define characteristics
                 show(){
-                    image(targetimage,this.x,this.y,70,70);
+                    image(targetimage,this.x,this.y,50,50);
                 }
                 update(){
                     //if the milliseconds is greater than or equal to 1000 + current timer value
@@ -49,7 +49,7 @@
                 clear();
                 target.show();
                 target.update();
-                image(crosshair,mouseX,mouseY,75,75);
+                image(crosshair,mouseX,mouseY,65,65);
                 //make cursor appear on center of the crosshair
                 imageMode(CENTER);
             }
