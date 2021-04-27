@@ -70,14 +70,14 @@
                     document.getElementById('points').innerHTML = score;
                 }
                 console.log(hit);
-                curMillisReset += millis() - prevMili
-                curMillisTarget += millis() - prevMili
-                prevMili = millis();
+                curMillisReset += millis() - prevMilli
+                curMillisTarget += millis() - prevMilli
+                prevMilli = millis();
                 if(curMillisReset  >= 10000){
                 //stuff
                 window.alert("Game Over" + "  Score= " + score);
                 score = 0;
-                curMillisReset = 0
+                curMillisReset = 0;
                 }  
                 // if(millis() >= 10000){
                 //     timer = 0;
