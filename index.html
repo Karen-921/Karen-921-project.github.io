@@ -39,6 +39,11 @@
                         //reset timer
                         timer = millis();
                     }
+                    else{
+                        timer = 0;
+                        window.alert("Game Over" + "  Score= " + score);
+                        score = 0; 
+                    }
                 }
             }
             function setup(){
@@ -61,11 +66,11 @@
                     document.getElementById('points').innerHTML = score;
                 }
                 console.log(hit);
-                if(millis() >= 10000){
-                    timer = 0;
-                    window.alert("Game Over" + "  Score= " + score);
-                    score = 0;
-                }
+                // if(millis() >= 10000){
+                //     timer = 0;
+                //     window.alert("Game Over" + "  Score= " + score);
+                //     score = 0;
+                // }
             }
             // function targets(){
             //     this.x = random(50,w-50);
