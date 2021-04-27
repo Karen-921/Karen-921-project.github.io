@@ -18,6 +18,9 @@
             var targetimage;
             hit = false;
             var score = 0;
+            let prevMilli = 0;
+            let curMillisReset = 0
+            let curMillisTarget = 0
 
             function preload(){
                 targetimage = loadImage("targets.png");
@@ -33,16 +36,17 @@
                 }
                 update(){
                     //if the milliseconds is greater than or equal to 1000 + current timer value
-                    if(millis() >= 1500 + timer){
-                        this.x = random(50,w-50);
-                        this.y = random(50,h-50);
-                        //reset timer
-                        timer = millis();
-                    }
-                    if(timer + 1500 >= 10000){
-                        timer = 0;
-                        window.alert("Game Over" + "  Score= " + score);
-                        score = 0; 
+                    // if(millis() >= 1500 + timer){
+                    //     this.x = random(50,w-50);
+                    //     this.y = random(50,h-50);
+                    //     //reset timer
+                    //     timer = millis();
+                    // }
+                    if(curMillisTarget >= 1500){
+                    //stuff
+                    curMililisTarget = 0;
+                    this.x = random(50,w-50);
+                    this.y = random(50,h-50);
                     }
                 }
             }
@@ -66,6 +70,15 @@
                     document.getElementById('points').innerHTML = score;
                 }
                 console.log(hit);
+                curMillisReset += millis() - prevMili
+                curMillisTarget += millis() - prevMili
+                prevMili = millis();
+                if(curMillisReset  >= 10000){
+                //stuff
+                window.alert("Game Over" + "  Score= " + score);
+                score = 0;
+                curMillisReset = 0
+                }  
                 // if(millis() >= 10000){
                 //     timer = 0;
                 //     window.alert("Game Over" + "  Score= " + score);
