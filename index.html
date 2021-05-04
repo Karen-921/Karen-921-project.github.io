@@ -14,7 +14,7 @@
         <h1 id = "points"></h1>
         <script>
             var w = window.innerWidth;
-            var h = window.innerHeight;
+            var h = window.innerHeight - 10;
             //variable to store crosshair
             var crosshair;
             //variable to store targets
@@ -33,7 +33,7 @@
             class targets{
                 constructor(){
                     this.x = random(50,w-50);
-                    this.y = random(70,h-70);
+                    this.y = random(50,h-50);
                 }
                 //build function called SHOW to define characteristics
                 show(){
