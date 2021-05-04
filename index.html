@@ -14,7 +14,7 @@
         <h1 id = "points"></h1>
         <script>
             var w = window.innerWidth;
-            var h = window.innerHeight - 10;
+            var h = window.innerHeight;
             //variable to store crosshair
             var crosshair;
             //variable to store targets
@@ -56,7 +56,7 @@
                 }
             }
             function setup(){
-                createCanvas(w,h);
+                createCanvas(w,h-10);
                 //load the crosshair image
                 crosshair = loadImage("blackcrosshair.png");
                 target = new targets();
