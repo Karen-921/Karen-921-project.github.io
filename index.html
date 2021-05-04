@@ -8,6 +8,10 @@
             h1{
                 text-align: center;
             }
+            body{
+                margin: 0px;
+                overflow: hidden;
+            }
         </style>
     </head>
     <body>
@@ -56,7 +60,7 @@
                 }
             }
             function setup(){
-                createCanvas(w,h-10);
+                createCanvas(w,h);
                 //load the crosshair image
                 crosshair = loadImage("blackcrosshair.png");
                 target = new targets();
